@@ -1,0 +1,153 @@
+extends layout
+
+block content
+  #dialog-form(title='Grain Dryer Data Configuration')
+    h5(align='center')
+      strong(style='color: #FB3802') Grain Dryer Data Configuration
+    p.validateTips Please choose or input ALL requird form fields.
+    form
+      fieldset
+        label(for='gtype') Grain Type
+        select#gtype.text.ui-widget-content.ui-corner-all(name='gtype', style='width: 100px;')
+          option(value='0') select---
+          option(value='wheat') wheat
+          option(value='corn') corn
+        br
+        label(for='btime') Begin Time
+        input#btime.text.ui-widget-content.ui-corner-all(type='text', name='btime', style='width: 260px;', value='2015-08-22T13:36:19')
+        label(for='etime') End Time
+        input#etime.text.ui-widget-content.ui-corner-all(type='text', name='etime', style='width: 260px;', value='2015-08-22T16:15:03')
+        label(for='nbatch') Batch
+        select#nbatch.text.ui-widget-content.ui-corner-all(name='nbatch', style='width: 260px')
+          option(value='0') Press "Get Batch" and then choose the batch, after finishing above fields
+        br
+        br
+        button#gbatch(type='button') Get Batch
+        span#batchtext
+        input(type='submit', tabindex='-1', style='position:absolute; top:-1000px')
+  nav
+    .nav(style='padding-left: 10px; padding-right: 10px; background: #B8E0D4;')
+      div(style='width: 1250px; margin-left: auto; margin-right: auto;')
+        a(href='http://nquiringminds.com/')
+          img#logo(src='http://nqm3.nickallott.com/files/2015/02/nqminds-blue-logo1-300x57.png', alt='nquiringminds')
+  .vertical-center
+    .container-fluid(style='width: 1280px; overflow:auto;')
+      h4 The Monitor of Grain Dryer: Humidity/Temperature
+      div(style='width: auto; float: left;')
+        button#gdconfig.btn.btn-primary(type='button') Data Choice
+      div(style='width: auto; float: left; position: relative; left: 20px')
+        h5
+          span#gtype
+      div(style='clear: both;')
+      br
+      // row top
+      .row-fluid.row-5
+        .col-sm-2(style='background-color:lavender; width: 200px; height: 150px; overflow:auto; border:1px solid #000; text-align:center;')
+          p Burner Temperature Setting
+          br
+          br
+          button.btn.btn-danger.btn-lg.nohover(type='button')
+            span#t9-value
+        .col-sm-8(style='background-color:lavenderblush; width: 850px; height: 150px; overflow:auto;')
+          .row-fluid
+            #m9.col-sm-6(style='width: 400px;  height: 150px; overflow:auto; border:1px solid #000;')
+            #m10.col-sm-6(style='width: 400px;  height: 150px; overflow:auto; float: right; border:1px solid #000;')
+        .col-sm-2(style='background-color:lavender; width: 200px; height: 150px; overflow:auto; border:1px solid #000; text-align:center;')
+          p Discharge Time Setting
+          br
+          br
+          button.btn.btn-info.btn-lg.nohover(type='button')
+            span#t10-value
+      // row 1
+      .row-fluid.row-1
+        .col-sm-2.ht1(style='background-color:lavender; width: 200px; height: 150px; overflow:auto; border:1px solid #000;')
+          p
+          svg#g1(width='176', height='82')
+          .progress
+            .progress-bar.progress-bar-danger.progress-bar-striped.active.t1(role='progressbar', aria-valuemin='0', aria-valuemax='100', style='width:0%')
+              span#t1-value
+        .col-sm-8(style='background-color:lavenderblush; width: 850px; height: 150px; overflow:auto;')
+          .row-fluid
+            #m1.col-sm-6(style='width: 400px;  height: 150px;overflow:auto; border:1px solid #000;')
+            #m2.col-sm-6(style='width: 400px;  height: 150px;overflow:auto; float: right; border:1px solid #000;')
+        .col-sm-2.ht2(style='background-color:lavender; width: 200px; height: 150px; overflow:auto; border:1px solid #000;')
+          p
+          svg#g2(width='176', height='82')
+          .progress
+            .progress-bar.progress-bar-danger.progress-bar-striped.active.t2(role='progressbar', aria-valuemin='0', aria-valuemax='100', style='width:0%')
+              span#t2-value
+      // row 2
+      .row-fluid.row-2
+        .col-sm-2.ht3(style='background-color:lavender; width: 200px; height: 150px; overflow:auto; border:1px solid #000;')
+          p
+          svg#g3(width='176', height='82')
+          .progress
+            .progress-bar.progress-bar-danger.progress-bar-striped.active.t3(role='progressbar', aria-valuemin='0', aria-valuemax='100', style='width:0%')
+              span#t3-value
+        .col-sm-8(style='background-color:lavenderblush; width: 850px; height: 150px; overflow:auto;')
+          .row-fluid
+            #m3.col-sm-6(style='width: 400px;  height: 150px;overflow:auto; border:1px solid #000;')
+            #m4.col-sm-6(style='width: 400px;  height: 150px;overflow:auto; float: right; border:1px solid #000;')
+        .col-sm-2.ht4(style='background-color:lavender; width: 200px; height: 150px; overflow:auto; border:1px solid #000;')
+          p
+          svg#g4(width='176', height='82')
+          .progress
+            .progress-bar.progress-bar-danger.progress-bar-striped.active.t4(role='progressbar', aria-valuemin='0', aria-valuemax='100', style='width:0%')
+              span#t4-value
+      // row 3
+      .row-fluid.row-3
+        .col-sm-2.ht5(style='background-color:lavender; width: 200px; height: 150px; overflow:auto; border:1px solid #000;')
+          p
+          svg#g5(width='176', height='82')
+          .progress
+            .progress-bar.progress-bar-danger.progress-bar-striped.active.t5(role='progressbar', aria-valuemin='0', aria-valuemax='100', style='width:0%')
+              span#t5-value
+        .col-sm-8(style='background-color:lavenderblush; width: 850px; height: 150px; overflow:auto;')
+          .row-fluid
+            #m5.col-sm-6(style='width: 400px;  height: 150px;overflow:auto; border:1px solid #000;')
+            #m6.col-sm-6(style='width: 400px;  height: 150px;overflow:auto; float: right; border:1px solid #000;')
+        .col-sm-2.ht6(style='background-color:lavender; width: 200px; height: 150px; overflow:auto; border:1px solid #000;')
+          p
+          svg#g6(width='176', height='82')
+          .progress
+            .progress-bar.progress-bar-danger.progress-bar-striped.active.t6(role='progressbar', aria-valuemin='0', aria-valuemax='100', style='width:0%')
+              span#t6-value
+      // row 4
+      .row-fluid.row-4
+        .col-sm-2.ht7(style='background-color:lavender; width: 200px; height: 150px; overflow:auto; border:1px solid #000;')
+          p
+          svg#g7(width='176', height='82')
+          .progress
+            .progress-bar.progress-bar-danger.progress-bar-striped.active.t7(role='progressbar', aria-valuemin='0', aria-valuemax='100', style='width:0%')
+              span#t7-value
+        .col-sm-8(style='background-color:lavenderblush; width: 850px; height: 150px; overflow:auto;')
+          .row-fluid
+            #m7.col-sm-6(style='width: 400px;  height: 150px;overflow:auto; border:1px solid #000;')
+            #m8.col-sm-6(style='width: 400px;  height: 150px;overflow:auto; float: right; border:1px solid #000;')
+        .col-sm-2.ht8(style='background-color:lavender; width: 200px; height: 150px; overflow:auto; border:1px solid #000;')
+          p
+          svg#g8(width='176', height='82')
+          .progress
+            .progress-bar.progress-bar-danger.progress-bar-striped.active.t8(role='progressbar', aria-valuemin='0', aria-valuemax='100', style='width:0%')
+              span#t8-value
+      // out
+      .row-fluid.spacer.row-0
+        .col-sm-2.ht0(style='background-color:lavender; width: 200px; height: 150px; overflow:auto; border:1px solid #000;')
+          p
+          svg#g0(width='176', height='82')
+          .progress
+            .progress-bar.progress-bar-danger.progress-bar-striped.active.t0(role='progressbar', aria-valuemin='0', aria-valuemax='100', style='width:0%')
+              span#t0-value
+        .col-sm-4(style='background-color:lavenderblush; width: 425px; height: 150px; overflow:auto;')
+          .row-fluid
+            #m0.col-sm-12(style='width: 400px;  height: 150px;overflow:auto; border:1px solid #000;')
+        .col-sm-6(style='width: 625px; height: 150px;')
+          h4 Time bar
+          p
+            label(for='nTime', style='display: inline-block; width: 240px; text-align: left')
+              h5
+                | Time:
+                span#nTime-value
+            .tBar(style='background: #AA0505')
+      //
+  script(src='/javascripts/main.js')
